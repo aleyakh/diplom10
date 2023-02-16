@@ -48,3 +48,4 @@ services:
 
 volumes:
   diploma_pg_data:
+  django_static:
