@@ -1,0 +1,9 @@
+# ignore all
+**
+
+#expect
+!todolist/**
+!enrtypoint.sh
+!manage.py
+!poetry.lock
+!pyproject.toml
