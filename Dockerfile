@@ -23,7 +23,7 @@ EXPOSE 8000
 ENTRYPOINT ["bash", "entrypoint.sh"]
 
 
-FROM base_image as prog_image
+FROM base_image as prod_image
 
 RUN pip install -r /tmp/requirements.prod.txt
 CMD ["gunicorn", "todolist.wsgi", "-w", "2", "-b", "0.0.0.0:8000"]
