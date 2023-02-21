@@ -3,7 +3,7 @@
 
 #expect
 !todolist/**
-!enrtypoint.sh
+!entrypoint.sh
 !manage.py
 !poetry.lock
 !pyproject.toml
