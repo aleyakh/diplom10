@@ -17,7 +17,7 @@ class CreateUserSerializer(serializers.ModelSerializer):
 
     def validate(self, attrs: dict) -> dict:
         if attrs['password'] != attrs['password_repeat']:
-            raise ValidationError({'password_repeat': 'Password must match'})
+            raise ValidationError({'password_repeat': 'Passwords must match'})
         return attrs
 
     def create(self, validated_data: dict) -> User:
@@ -49,3 +49,18 @@ class ProfileSerializer(serializers.ModelSerializer):
     class Meta:
         model = User
         fields = ('id', 'first_name', 'last_name', 'email', 'username')
+
+
+class UpdatePasswordSerializer(serializers.Serializer):
+    old_password = PasswordField(required=True)
+    new_password = PasswordField(required=True)
+
+    def validate_old_password(self, old_password: str) -> str:
+        if not self.instance.check_password(old_password):
+            raise ValidationError('Password is not correct')
+        return old_password
+
+    def update(self, instance: User, validated_data: dict) -> User:
+        instance.set_password(validated_data['new_password'])
+        instance.save(update_fields=('password', ))
+        return instance
