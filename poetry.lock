@@ -343,6 +343,7 @@ socks = ["PySocks (>=1.5.6,!=1.5.7,<2.0)"]
 lock-version = "1.1"
 python-versions = "^3.10"
 content-hash = "b8ab93290aed0168f93a74c0c73033828f1ba8fdcdd4b4acbe7f5c8670e8a2d5"
+content-hash = "a8f94cc1e0e6ebdbf70fc37d6cd9093baf17f59b44a256f93776a6554e1b4cfb"
 
 [metadata.files]
 ansible-vault-win = [
