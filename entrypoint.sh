@@ -1,7 +1,3 @@
-#!/bin/bash
-python manage.py migrate --check
-status=$?
-if [[ $status != 0 ]]; then
-  python manage.py migrate
-fi
+#!/bin/bash -x
+python manage.py migrate --noinput || exit 1
 exec "$@"
