@@ -1,3 +1,4 @@
 from django.contrib import admin
+from todolist.bot.models import TgUser
 
-# Register your models here.
+admin.site.register(TgUser)
