@@ -47,8 +47,7 @@ services:
       - django_static:/usr/share/nginx/html/static/
 
   bot:
-    build:
-      target: dev_image
+    image: aleyakh/diploma_10:latest
     env_file: .env
     entrypoint: ''
     command: python3 manage.py runbot
